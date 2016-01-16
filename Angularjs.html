@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="myApp" ng-controller="userCtrl">
+
+<div class="w3-container">
+
+<h3>Bawarchi Specials</h3>
+<h4>(This page is used to add/edit items to the menu list)</h4>
+
+<table class="w3-table w3-bordered w3-striped">
+  <tr>
+    <th>Edit</th>
+    <th>Item</th>
+    <th>Price</th>
+  </tr>
+  <tr ng-repeat="user in users">
+    <td>
+      <button class="w3-btn w3-ripple" ng-click="editUser(user.id)">&#9998; Edit</button>
+    </td>
+    <td>{{ user.Item }}</td>
+    <td>{{ user.Price }}</td>
+  </tr>
+</table>
+<br>
+<button class="w3-btn w3-green w3-ripple" ng-click="editUser('new')">&#9998; Add a New Item</button>
+
+<form ng-hide="hideform">
+  <h3 ng-show="edit">Add Item:</h3>
+  <h3 ng-hide="edit">Edit Item:</h3>
+    <label>Item Name:</label>
+    <input class="w3-input w3-border" type="text" ng-model="fName" ng-disabled="!edit" placeholder="Item Name">
+  <br>
+    <label>Price:</label>
+    <input class="w3-input w3-border" type="text" ng-model="lName" ng-disabled="!edit" placeholder="Price">
+  <br>
+<button class="w3-btn w3-green w3-ripple" ng-disabled="error || incomplete">&#10004; Save Changes</button>
+</form>
+
+</div>
+
+<script src= "my.js"></script>
+
+</body>
+</html>
