@@ -8,7 +8,11 @@ body
     position: relative;
    top: 100%;
    left: 50%;
+<<<<<<< HEAD
    width: 50012px;
+=======
+   width: 5000px;
+>>>>>>> changed css
    height: 150px;
    margin-top: 0px; /* Half the height */
    margin-left: -250px; /* Half the width */
